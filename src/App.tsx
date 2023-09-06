@@ -50,10 +50,7 @@ const App = () => {
   return (
     <>
       <StyleSwitcher theme={theme} toggleStyle={toggleStyle} />
-      <div
-        className="container"
-        style={{ backgroundImage: `url("./color-bank-credit-card-2.jpg")` }}
-      >
+      <div className="container">
         <DebitCard inputState={inputState} theme={theme}>
           <FrontCard inputState={inputState} inputData={inputData} />
           <BackCard inputState={inputState} inputData={inputData} />

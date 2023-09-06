@@ -21,9 +21,16 @@ const DebitCard: React.FC<DebitCardProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    ref.current?.classList.toggle("is-flipped");
+    const flipCard = () => {
+      if (inputState.cardCvvInput) {
+        ref.current?.classList.add("is-flipped");
+      } else {
+        ref.current?.classList.remove("is-flipped");
+      }
+    };
 
-    return () => {};
+    // Call the flipCard function when inputState.cardCvvInput changes
+    flipCard();
   }, [inputState.cardCvvInput]);
 
   return (
